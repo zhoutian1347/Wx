@@ -5,6 +5,7 @@ import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -35,7 +36,7 @@ public class HttpsConfig {
 		connector.setRedirectPort(443);
 		return connector;
 	}
-	public void customize(ConfigurableEmbeddedServletContainer container) {
+	public void customize(ConfigurableServletWebServerFactory container) {
 		container.setPort(443);
 	}
 }
