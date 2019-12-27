@@ -3,9 +3,9 @@ server:
   tomcat:
     uri-encoding: UTF-8
   ssl:
-    key-store: tomcat.keystore
+    key-store: root.jks
     key-alias: request.year.csrhwl.com
-    key-store-type: keystore
+    key-store-type: jks
     key-store-password: 123456
     enabled: true
     
