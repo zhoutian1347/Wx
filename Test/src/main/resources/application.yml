@@ -1,0 +1,23 @@
+server:
+  port: 443
+  tomcat:
+    uri-encoding: UTF-8
+  ssl:
+    key-store: tomcat.keystore
+    key-alias: request.year.csrhwl.com
+    key-store-type: keystore
+    key-store-password: 123456
+    enabled: true
+    
+spring:
+  thymeleaf:
+    cache: false
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+    
+logging:
+  level:
+    com.csrlwl: info
+    
