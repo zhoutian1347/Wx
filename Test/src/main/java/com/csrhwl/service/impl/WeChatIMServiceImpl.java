@@ -1,8 +1,10 @@
 package com.csrhwl.service.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import org.beetl.ext.format.DateFormat;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,11 +22,12 @@ public class WeChatIMServiceImpl implements WeChatIMService{
 	@Override
 	public int saveWeChatInfoMessage(WeChatIM we) {
 		int rows = 0;
-		we.setCreateTime(new DateFormat().format(new Date(), "yyyy-MM-dd").toString());
+		we.setCreateTime(new SimpleDateFormat("yyyy-MM-dd").format(new Date()).toString());
 		WeChatIM already = weMapper.selectUserByAvatarUrl(we.getAvatarUrl(),we.getCreateTime());
 		if(already==null) {
 			rows = weMapper.saveWeChatInfoMessage(we);
 		}else {
+			System.out.println("重复数据，放弃存储");
 			return 4;
 		}
 		
@@ -32,12 +35,11 @@ public class WeChatIMServiceImpl implements WeChatIMService{
 		return rows;
 	}
 	
-	@Test
-	public void tes() {
-		DateFormat df = new DateFormat();
-		Date data = new Date();
-		String s = df.format(data, "yyyy-MM-dd").toString();
-		System.out.println(s);
+	@Override
+	public List<WeChatIM> getUserInfo() {
+		List<WeChatIM> list = new ArrayList<WeChatIM>();
+		list = weMapper.selectAllUser();
+		return list;
 	}
 	
 	

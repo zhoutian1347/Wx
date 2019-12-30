@@ -17,14 +17,20 @@ spring:
       prefix: /templates/
       suffix: .html
   datasource:
+    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql:///we?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: root
+    #HuiLong!@#66))
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
    
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.csrhwl.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
 
 logging:
   level:

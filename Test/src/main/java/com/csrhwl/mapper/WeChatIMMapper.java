@@ -1,6 +1,8 @@
 package com.csrhwl.mapper;
 
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -12,5 +14,8 @@ public interface WeChatIMMapper {
 
 	@Select("select * from wx_user_info where avatar_url = #{avatarUrl} and create_time = #{createTime}")
 	WeChatIM selectUserByAvatarUrl(@Param("avatarUrl")String avatarUrl,@Param("createTime")String createTime);
+
+	@Select("select * from wx_user_info")
+	List<WeChatIM> selectAllUser();
 	
 }

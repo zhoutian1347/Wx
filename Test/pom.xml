@@ -120,15 +120,6 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
-		<!--JSR303数据校验支持；tomcat7及以上的服务器， tomcat7以下的服务器：el表达式。额外给服务器的lib包中替换新的标准的el -->
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>5.4.1.Final</version>
-		</dependency>
-
-
 		<!-- Spring-Jdbc -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
@@ -165,12 +156,12 @@
 		</dependency>
 		<!-- MyBatis整合Spring的适配包 -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
-		<!--缺少此jar包，导致@Mapper注解无效-->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.2.0</version>
-        </dependency>
+		<!--缺少此jar包，导致@Mapper注解无效 -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.2.0</version>
+		</dependency>
 
 
 		<!-- 数据库连接池、驱动 -->
