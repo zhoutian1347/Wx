@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.csrhwl.mapper.WeChatIMMapper">
+
+	<insert id="saveWeChatInfoMessage">
+		insert into wx_user_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="realName != null">
+				real_name,
+			</if>
+			<if test="nickName != null">
+				nick_name,
+			</if>
+			<if test="avatarUrl != null">
+				avatar_url,
+			</if>
+			<if test="createTime != null">
+				create_time
+			</if>
+		</trim>
+		<trim prefix="values(" suffix=")" suffixOverrides=",">
+			<if test="realName != null">
+				#{realName,jdbcType=VARCHAR},
+			</if>
+			<if test="nickName != null">
+				#{nickName,jdbcType=VARCHAR},
+			</if>
+			<if test="avatarUrl != null">
+				#{avatarUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</insert>
+
+</mapper>
