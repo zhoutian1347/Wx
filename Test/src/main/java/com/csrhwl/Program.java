@@ -1,4 +1,4 @@
-package com.csrhwl.test;
+package com.csrhwl;
 
 import java.io.StringReader;
 

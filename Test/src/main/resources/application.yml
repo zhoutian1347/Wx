@@ -16,8 +16,17 @@ spring:
     view:
       prefix: /templates/
       suffix: .html
-    
+  datasource:
+    url: jdbc:mysql:///we?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+   
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 logging:
   level:
-    com.csrlwl: info
+    com.csrlwl: debug
     
